@@ -2,8 +2,7 @@ package Interface;
 
 import java.io.File;
 
-import javax.naming.directory.DirContext;
-
+import BackEnd.DeleteLogic;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -112,23 +111,7 @@ public class Interface extends Application {
 						choose.setDisable(true);
 						System.out.println( choose.isDisabled());
 
-						try {
-							Thread.sleep(100);
-						} catch (InterruptedException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-
-						while (action.isDisabled()){
-							//BackEnd.DeleteLogic.deleteFolder(selectedDirectory);
-							//System.out.println("working");
-							try {
-								Thread.sleep(5000);
-							} catch (InterruptedException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
-						}
+						DeleteLogic.deleteFolder(selectedDirectory);
 
 				}
 
